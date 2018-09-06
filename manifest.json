@@ -1,0 +1,33 @@
+{
+    "name": "Citation Plus",
+    "version": "1.0",
+    "description": "Get accurate citations for a webpage instantly",
+    "permissions": ["activeTab"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/synonym_logo16.png",
+        "32": "images/synonym_logo32.png",
+        "48": "images/synonym_logo48.png",
+        "128": "images/synonym_logo128.png"
+      }
+    },
+    "icons": {
+      "16": "images/synonym_logo16.png",
+      "32": "images/synonym_logo32.png",
+      "48": "images/synonym_logo48.png",
+      "128": "images/synonym_logo128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "manifest_version": 2
+  }
+  

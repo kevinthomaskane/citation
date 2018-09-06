@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Citation Plus</title>
+</head>
+
+<body>
+  <div class="body__container">
+    <img src="images/citation_logo.svg" alt="">
+    <h3 class="body__title">
+      Choose a format below and get a citation of your webpage. If something doesn't seem right, edit the input fields to generate
+      a new citation.
+    </h3>
+    <div class="row">
+      <div class="citation__option" data-id="apa">
+        <div class="button-fill-left" data-id="apa"></div>
+        <div class="button-fill-right" data-id="apa"></div>
+        <a href="#">APA</a>
+      </div>
+      <div class="citation__option" data-id="mla">
+        <div class="button-fill-left" data-id="mla"></div>
+        <div class="button-fill-right" data-id="mla"></div>
+        <a href="#">MLA</a>
+      </div>
+      <div class="citation__option" data-id="chicago">
+        <div class="button-fill-left" data-id="chicago"></div>
+        <div class="button-fill-right" data-id="chicago"></div>
+        <a href="#">Chicago</a>
+      </div>
+    </div>
+    <div class="proper-format">
+      <h3 class="proper-formatting">Proper formatting:</h3>
+      <div class="proper-format-block" data-id="mla">
+        Author’s Last name, First name. “Title of the Article or Individual Page.”
+        <span class="italics">Title of the Website</span>, Date of Publication, URL.
+      </div>
+      <div class="proper-format-block" data-id="apa">
+        Author's Last name, First name. (Year, Month Day Published).
+        <span class="italics">Article title</span>. Retrieved from URL.
+      </div>
+      <div class="proper-format-block" data-id="chicago">
+        Author's Last name, First name. “Article Title.” Website Title. Month Day, Year of publication. Month Day, Year of access.
+        URL.
+      </div>
+    </div>
+    <div class="input__container">
+      <div class="mla-format-inputs" data-id="mla">
+        <p>Author's Last name, First name</p>
+        <input type="text" id="mla-name" data-id="name">
+        <p>"Title of Article or Individual Page"</p>
+        <input type="text" id="mla-article-title" data-id="article-title">
+        <p class="italics">Title of Website</p>
+        <input type="text" id="mla-website-title" data-id="website-title">
+        <p>Date of Publication</p>
+        <input type="text" id="mla-date" data-id="date">
+        <p>URL</p>
+        <input type="text" id="mla-url" data-id="url">
+      </div>
+
+    </div>
+    <h3 class="citation-header">Your Citation: </h3>
+    <div class="citation">
+        
+    </div>
+    <div class="powered-by">
+      <span>powered by </span>
+      <a href="https://penandthepad.com">penandthepad.com</a>
+    </div>
+  </div>
+  <script type="text/javascript" src="popup.js"></script>
+</body>
+
+</html>
