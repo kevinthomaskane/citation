@@ -11,10 +11,11 @@
 
 <body>
   <div class="body__container">
-    <img src="images/citation_logo.svg" alt="">
+    <a class="logo" href="#">
+      <img src="images/citation_logo.svg" alt="">
+    </a>
     <h3 class="body__title">
-      Choose a format below and get a citation of your webpage. If something doesn't seem right, edit the input fields to generate
-      a new citation.
+      Choose a format below and get a citation of the current webpage.
     </h3>
     <div class="row">
       <div class="citation__option" data-id="apa">
@@ -33,39 +34,82 @@
         <a href="#">Chicago</a>
       </div>
     </div>
-    <div class="proper-format">
+    <div class="hide-container">
+
+
       <h3 class="proper-formatting">Proper formatting:</h3>
-      <div class="proper-format-block" data-id="mla">
-        Author’s Last name, First name. “Title of the Article or Individual Page.”
-        <span class="italics">Title of the Website</span>, Date of Publication, URL.
+      <div class="proper-format">
+
+        <div class="proper-format-block" data-id="mla">
+          Author’s Last name, First name. “Title of the Article or Individual Page.”
+          <span class="italics">Title of the Website</span>, Date of Publication, URL.
+        </div>
+        <div class="proper-format-block" data-id="apa">
+          Author's Last name, First name. (Year, Month Day Published).
+          <span class="italics">Article title</span>. Retrieved from URL.
+        </div>
+        <div class="proper-format-block" data-id="chicago">
+          Author's Last name, First name. “Article Title.” Website Title. Month Day, Year of publication. Month Day, Year of access.
+          URL.
+        </div>
       </div>
-      <div class="proper-format-block" data-id="apa">
-        Author's Last name, First name. (Year, Month Day Published).
-        <span class="italics">Article title</span>. Retrieved from URL.
+      <h3 class="citation-header">Your Citation: </h3>
+      <div class="copy-container">
+        <span class="copy"> &#9988;</span>
+        <div class="copy-to-clipboard">
+          copy to clipboard
+        </div>
       </div>
-      <div class="proper-format-block" data-id="chicago">
-        Author's Last name, First name. “Article Title.” Website Title. Month Day, Year of publication. Month Day, Year of access.
-        URL.
+      <div class="citation">
+
       </div>
-    </div>
-    <div class="input__container">
-      <div class="mla-format-inputs" data-id="mla">
-        <p>Author's Last name, First name</p>
-        <input type="text" id="mla-name" data-id="name">
-        <p>"Title of Article or Individual Page"</p>
-        <input type="text" id="mla-article-title" data-id="article-title">
-        <p class="italics">Title of Website</p>
-        <input type="text" id="mla-website-title" data-id="website-title">
-        <p>Date of Publication</p>
-        <input type="text" id="mla-date" data-id="date">
-        <p>URL</p>
-        <input type="text" id="mla-url" data-id="url">
+      <h3>Edit your citation:</h3>
+      <div class="input__container">
+        <div class="mla-format-inputs" data-id="mla">
+          <p>Author's Last name, First name</p>
+          <input type="text" id="mla-name" data-id="name">
+          <p>"Title of Article or Individual Page"</p>
+          <input type="text" id="mla-article-title" data-id="article-title">
+          <p class="italics">Title of Website</p>
+          <input type="text" id="mla-website-title" data-id="website-title">
+          <p>Date of Publication ('no date' by default)</p>
+          <input type="text" id="mla-date" data-id="date">
+          <p>URL</p>
+          <input type="text" id="mla-url" data-id="url">
+        </div>
+        <div class="apa-format-inputs" data-id="apa">
+          <p>Author's Last name, First name</p>
+          <input type="text" id="apa-name" data-id="name">
+          <p>Date of Publication ('no date' by default)</p>
+          <input type="text" id="apa-date" data-id="date">
+          <p>"Title of Article or Individual Page"</p>
+          <input type="text" id="apa-article-title" data-id="article-title">
+          <p>URL</p>
+          <input type="text" id="apa-url" data-id="url">
+        </div>
+        <div class="chicago-format-inputs" data-id="chicago">
+          <p>Author's Last name, First name</p>
+          <input type="text" id="chicago-name" data-id="name">
+          <p>"Title of Article or Individual Page"</p>
+          <input type="text" id="chicago-article-title" data-id="article-title">
+          <p class="italics">Title of Website</p>
+          <input type="text" id="chicago-website-title" data-id="website-title">
+          <p>Date of Publication ('no date' by default)</p>
+          <input type="text" id="chicago-date" data-id="date">
+          <p>Date of Access</p>
+          <input type="text" id="chicago-access" data-id="access">
+          <p>URL</p>
+          <input type="text" id="chicago-url" data-id="url">
+        </div>
+
+      </div>
+      <div class="citation__option--edit" data-id="edit">
+        <div class="submit-edits" data-id="edit">Submit Edits</div>
+        <div class="button-fill-left" data-id="edit"></div>
+        <div class="button-fill-right" data-id="edit"></div>
+
       </div>
 
-    </div>
-    <h3 class="citation-header">Your Citation: </h3>
-    <div class="citation">
-        
     </div>
     <div class="powered-by">
       <span>powered by </span>

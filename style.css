@@ -7,6 +7,7 @@ body {
   width: 300px;
   height: auto;
   padding: 10px;
+  margin: 0;
   color: black;
 }
 
@@ -14,10 +15,48 @@ body {
   margin-bottom: 10px;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-container {
+  display: none;
+}
+
 img {
   width: 50%;
   display: block;
   margin: 0 auto;
+}
+
+.logo {
+  position: relative;
+  height: auto;
+  display: block;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(248, 248, 188, 0.2),
+    rgba(252, 252, 105, 0.4)
+  );
+  left: 23%;
+  top: 16px;
+  bottom: 6px;
+  transition: 0.2s all ease-in-out;
+  border-radius: 10px;
+  transform: rotate(-5deg);
+}
+
+.logo:hover::after {
+  width: 55%;
+  right: 0;
+  transition: 0.2s all ease-in-out;
+  
 }
 
 .body__title {
@@ -31,7 +70,7 @@ img {
   justify-content: space-between;
 }
 
-.citation__option {
+.citation__option, .citation__option--edit {
   position: relative;
   text-align: center;
   flex-basis: 33%;
@@ -47,37 +86,47 @@ img {
   box-shadow: 0 4px 8px rgb(179, 178, 178);
 }
 
-.citation__option:hover {
+.citation__option:hover, .citation__option--edit:hover {
   color: white;
-  transition: .2s color ease-out;
+  transition: 0.2s color ease-out;
 }
 
+.citation__option--edit[data-id="edit"] {
+  width: 50%;
+  margin: 0 auto;
+}
+
+
+
 .button-fill-left {
-    position: absolute;
-    height: 100%;
-    width: 0px;
-    left: 50%;
-    background-color: red;
-    z-index: -1;
-    transition: .2s all ease-in-out;
+  position: absolute;
+  height: 100%;
+  width: 0px;
+  left: 50%;
+  top: 0;
+  background-color: red;
+  z-index: -1;
+  transition: 0.2s all ease-in-out;
 }
 .button-fill-right {
-    position: absolute;
-    height: 100%;
-    width: 0px;
-    right: 50%;
-    background-color: red;
-    z-index: -1;
-    transition: .2s all ease-in-out;
+  position: absolute;
+  height: 100%;
+  width: 0px;
+  top: 0;
+  right: 50%;
+  background-color: red;
+  z-index: -1;
+  transition: 0.2s all ease-in-out;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 p {
   margin-bottom: 5px;
+  padding-left: 20px;
 }
 
 input {
@@ -86,12 +135,13 @@ input {
   padding: 10px;
   border-radius: 2px;
   background-color: rgb(255, 255, 255);
-  border: solid 0.5px rgb(232, 232, 232);
+  border: solid 0.5px white;
   border-bottom: solid 3px transparent;
-  width: 93%;
+  width: 80%;
   display: block;
   transition: all 0.3s;
-  box-shadow: 0 2px 2px rgb(232, 232, 232);
+  box-shadow: 0 2px 2px rgb(194, 194, 194);
+  margin: 0 auto;
 }
 
 input:focus {
@@ -106,11 +156,93 @@ input:focus {
 
 .proper-format-block {
   display: none;
+  margin-bottom: 0;
+  padding: 5px;
 }
 
-.citation {
+.proper-format {
   border: solid 0.5px rgb(232, 232, 232);
   border-radius: 4px;
   padding: 5px;
   box-shadow: 0 2px 2px rgb(232, 232, 232);
 }
+
+.input__container {
+  background-color: rgb(252, 222, 222);
+  border-radius: 4px;
+  padding: 5px;
+  box-shadow: 0 2px 2px rgb(232, 232, 232);
+}
+
+.proper-format h3 {
+  margin-top: 0;
+}
+
+.citation {
+  border: solid 0.5px rgb(232, 232, 232);
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 2px rgb(232, 232, 232);
+  word-wrap: break-word;
+}
+
+.mla-format-inputs,
+.apa-format-inputs,
+.chicago-format-inputs {
+  display: none;
+}
+
+.powered-by {
+  float: right;
+}
+
+.powered-by a {
+  color: red;
+}
+
+.citation-header {
+  display: inline-block;
+}
+
+.copy-container {
+  display: inline-block;
+  position: relative;
+}
+
+.copy-to-clipboard {
+  position: absolute;
+  border: solid 1px rgb(229, 228, 228);
+  border-radius: 3px;
+  box-shadow: 0 2px 2px rgb(232, 232, 232);
+  bottom: -17px;
+  left: 35px;
+  padding: 5px;
+  z-index: 1;
+  background-color: rgb(229, 228, 228);
+  visibility: hidden;
+}
+
+.copy-to-clipboard::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: -6px;
+  border-top: solid 1px rgb(229, 228, 228);
+  border-left: solid 1px rgb(229, 228, 228);
+  transform: rotate(-45deg);
+  z-index: 0;
+  padding: 5px;
+  background-color: rgb(229, 228, 228);
+}
+
+.copy {
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.copy:hover + div {
+  visibility: visible;
+}
+
+
