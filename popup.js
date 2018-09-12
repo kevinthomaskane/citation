@@ -26,6 +26,15 @@ const submit_edits = document.querySelector(".submit-edits");
 //citation formats
 const mla = document.createElement("div");
 
+let url;
+
+const current_tab = { active: true, currentWindow: true };
+function callback(tabs) {
+  url = tabs[0].url; 
+  console.log(url); 
+}
+chrome.tabs.query(current_tab, callback);
+
 //chrome functions to get entire DOM
 chrome.tabs.executeScript(
   {
@@ -71,6 +80,10 @@ citation_options.forEach(el => {
     left_target.style.left = "50%";
   });
   el.addEventListener("click", () => {
+    if (url.includes("chrome") && url.includes("google")){
+      alert("Chrome doesn't allow its extensions to work in the marketplace.")
+      return;
+    }
     type_of_citation = data_id;
     for (let i = 0; i < proper_formats.length; i++) {
       if (proper_formats[i].getAttribute("data-id") !== type_of_citation) {
@@ -258,9 +271,6 @@ function fillCitation(type) {
             citation_container.innerHTML += `${selected_inputs[i].value}. `;
             break;
           case "date":
-            citation_container.innerHTML += `${selected_inputs[i].value}, `;
-            break;
-          case "access":
             citation_container.innerHTML += `${selected_inputs[i].value}, `;
             break;
           case "url":
